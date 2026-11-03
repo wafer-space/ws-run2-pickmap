@@ -1,0 +1,9 @@
+wafer,reel,project_code,project_name,flipped,how,reel_seqs,unload_seqs,basis,first_placed,last_placed
+wafer1,reticle S-2_-2,mixed,"45 projects, one reticle",45,"FLIPPED_180 27, ROTATED_90 18",1-45,10-54,angles,2026-10-16 16:58:57,2026-10-16 18:29:24
+wafer1,reticle S-3_-1,mixed,"53 projects, one reticle",53,"FLIPPED_180 35, ROTATED_90 18",1-53,1-53,angles,2026-10-16 14:27:16,2026-10-16 15:27:35
+wafer2,AS04,AS04,AS04 Multi-Project die using 3.3V SCL,1,ROTATED_90 1,35,175,angles,2026-10-17 17:30:42,2026-10-17 17:30:42
+wafer2,SCC0,SCC0,Private,1,ROTATED_90 1,65,157,angles,2026-10-18 12:08:44,2026-10-18 12:08:44
+wafer4,APTX,APTX,Private,38,FLIPPED_180 38,110-147,77-114,photo,2026-10-18 17:53:50,2026-10-18 18:04:46
+wafer4,COLF,COLF,Private,37,FLIPPED_180 37,109-145,77-113,photo,2026-10-18 17:39:34,2026-10-18 17:52:19
+wafer4,NEXA,NEXA,Private,36,FLIPPED_180 36,106-141,73-108,photo,2026-10-18 17:27:27,2026-10-18 17:38:02
+wafer4,WSLG,WSLG,Wafer.Space Logo,28,"ROTATED_90 1, FLIPPED_180 27",118-145,75-102,photo,2026-10-18 17:08:49,2026-10-18 17:19:38

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="678" height="571" viewBox="0 0 678 571" font-family="system-ui, -apple-system, Segoe UI, sans-serif" role="img" aria-label="reticle layout">
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<text x="10.0" y="18.0" font-size="15" fill="#0b0b0b" text-anchor="start" font-weight="600">Reticle layout - one shot, 54 positions</text>
+<rect x="10.0" y="31" width="10" height="10" rx="2" fill="#2a78d6"/>
+<text x="24.0" y="40.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">1x1 (4.0 x 5.2 mm)</text>
+<rect x="160.0" y="31" width="10" height="10" rx="2" fill="#eb6834"/>
+<text x="174.0" y="40.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">0p5x1 (2.0 x 5.2 mm)</text>
+<rect x="310.0" y="31" width="10" height="10" rx="2" fill="#1baf7a"/>
+<text x="324.0" y="40.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">1x0p5 (4.0 x 2.6 mm)</text>
+<rect x="460.0" y="31" width="10" height="10" rx="2" fill="#eda100"/>
+<text x="474.0" y="40.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">0p5x0p5 (2.0 x 2.6 mm)</text>
+<rect x="450.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>AS04 - 1x1</title></rect>
+<text x="493.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">AS04</text>
+<rect x="450.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>WSLG - 1x1</title></rect>
+<text x="493.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">WSLG</text>
+<rect x="450.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>NEXA - 1x1</title></rect>
+<text x="493.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">NEXA</text>
+<rect x="362.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>COLF - 1x1</title></rect>
+<text x="405.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">COLF</text>
+<rect x="274.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>APTX - 1x1</title></rect>
+<text x="317.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">APTX</text>
+<rect x="186.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>QBNL - 1x1</title></rect>
+<text x="229.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">QBNL</text>
+<rect x="98.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>T26B - 1x1</title></rect>
+<text x="141.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">T26B</text>
+<rect x="10.0" y="221.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>T26A - 1x1</title></rect>
+<text x="53.0" y="280.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">T26A</text>
+<rect x="362.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>SCC0 - 1x1</title></rect>
+<text x="405.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">SCC0</text>
+<rect x="538.0" y="449.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>FS03 - 0p5x1</title></rect>
+<text x="559.0" y="507.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">FS03</text>
+<rect x="582.0" y="449.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>FS02 - 0p5x1</title></rect>
+<text x="603.0" y="507.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">FS02</text>
+<rect x="626.0" y="449.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>FS01 - 0p5x1</title></rect>
+<text x="647.0" y="507.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">FS01</text>
+<rect x="538.0" y="335.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>HZ80 - 0p5x1</title></rect>
+<text x="559.0" y="393.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">HZ80</text>
+<rect x="582.0" y="335.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>SCDO - 0p5x1</title></rect>
+<text x="603.0" y="393.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">SCDO</text>
+<rect x="626.0" y="335.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>RLCM - 0p5x1</title></rect>
+<text x="647.0" y="393.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">RLCM</text>
+<rect x="538.0" y="221.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>DPK1 - 0p5x1</title></rect>
+<text x="559.0" y="279.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">DPK1</text>
+<rect x="582.0" y="221.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>ISHI - 0p5x1</title></rect>
+<text x="603.0" y="279.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">ISHI</text>
+<rect x="626.0" y="221.0" width="42.0" height="112.0" rx="2" fill="#eb6834"><title>XQAC - 0p5x1</title></rect>
+<text x="647.0" y="279.9" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="600">XQAC</text>
+<rect x="450.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>MEME_2 - 1x0p5</title></rect>
+<text x="493.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">MEME_2</text>
+<rect x="362.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>MEME_1 - 1x0p5</title></rect>
+<text x="405.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">MEME_1</text>
+<rect x="362.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>GD04_1 - 1x0p5</title></rect>
+<text x="405.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">GD04_1</text>
+<rect x="450.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>GD04_2 - 1x0p5</title></rect>
+<text x="493.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">GD04_2</text>
+<rect x="362.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>NSCN - 1x0p5</title></rect>
+<text x="405.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">NSCN</text>
+<rect x="450.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>CSC1 - 1x0p5</title></rect>
+<text x="493.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">CSC1</text>
+<rect x="538.0" y="164.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>FC01 - 0p5x0p5</title></rect>
+<text x="559.0" y="194.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">FC01</text>
+<rect x="274.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>PSOC - 1x0p5</title></rect>
+<text x="317.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">PSOC</text>
+<rect x="274.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>0000 - 1x0p5</title></rect>
+<text x="317.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">0000</text>
+<rect x="274.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>CRD2 - 1x0p5</title></rect>
+<text x="317.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">CRD2</text>
+<rect x="98.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>AMM1_1 - 1x0p5</title></rect>
+<text x="141.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">AMM1_1</text>
+<rect x="186.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>AMM1_2 - 1x0p5</title></rect>
+<text x="229.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">AMM1_2</text>
+<rect x="582.0" y="164.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>SALU - 0p5x0p5</title></rect>
+<text x="603.0" y="194.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">SALU</text>
+<rect x="626.0" y="164.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>QZ80 - 0p5x0p5</title></rect>
+<text x="647.0" y="194.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">QZ80</text>
+<rect x="538.0" y="107.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>CAFE - 0p5x0p5</title></rect>
+<text x="559.0" y="137.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">CAFE</text>
+<rect x="582.0" y="107.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>DPK2 - 0p5x0p5</title></rect>
+<text x="603.0" y="137.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">DPK2</text>
+<rect x="626.0" y="107.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>TQVE - 0p5x0p5</title></rect>
+<text x="647.0" y="137.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">TQVE</text>
+<rect x="538.0" y="50.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>SCC1 - 0p5x0p5</title></rect>
+<text x="559.0" y="80.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">SCC1</text>
+<rect x="582.0" y="50.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>TQVA - 0p5x0p5</title></rect>
+<text x="603.0" y="80.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">TQVA</text>
+<rect x="626.0" y="50.0" width="42.0" height="55.0" rx="2" fill="#eda100"><title>TQVD - 0p5x0p5</title></rect>
+<text x="647.0" y="80.3" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="600">TQVD</text>
+<rect x="10.0" y="164.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>DCO0 - 1x0p5</title></rect>
+<text x="53.0" y="195.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">DCO0</text>
+<rect x="10.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>AS16 - 1x0p5</title></rect>
+<text x="53.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">AS16</text>
+<rect x="98.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>EURO - 1x0p5</title></rect>
+<text x="141.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">EURO</text>
+<rect x="186.0" y="107.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>OCD3 - 1x0p5</title></rect>
+<text x="229.0" y="138.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">OCD3</text>
+<rect x="10.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>TQVC - 1x0p5</title></rect>
+<text x="53.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">TQVC</text>
+<rect x="98.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>NAX1 - 1x0p5</title></rect>
+<text x="141.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">NAX1</text>
+<rect x="186.0" y="50.0" width="86.0" height="55.0" rx="2" fill="#1baf7a"><title>CAB1 - 1x0p5</title></rect>
+<text x="229.0" y="81.2" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">CAB1</text>
+<rect x="10.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>BTX1 - 1x1</title></rect>
+<text x="53.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">BTX1</text>
+<rect x="98.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>CLON - 1x1</title></rect>
+<text x="141.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">CLON</text>
+<rect x="186.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>KIAN - 1x1</title></rect>
+<text x="229.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">KIAN</text>
+<rect x="274.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>T0P3 - 1x1</title></rect>
+<text x="317.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">T0P3</text>
+<rect x="362.0" y="449.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>MOLE - 1x1</title></rect>
+<text x="405.0" y="508.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">MOLE</text>
+<rect x="10.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>SCTP - 1x1</title></rect>
+<text x="53.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">SCTP</text>
+<rect x="98.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>SCMT - 1x1</title></rect>
+<text x="141.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">SCMT</text>
+<rect x="186.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>SCUP - 1x1</title></rect>
+<text x="229.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">SCUP</text>
+<rect x="274.0" y="335.0" width="86.0" height="112.0" rx="2" fill="#2a78d6"><title>SCML - 1x1</title></rect>
+<text x="317.0" y="394.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">SCML</text>
+</svg>

@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel CAB1 - run2</title>
+<style>
+@page { size:letter; margin:12mm; }
+* { box-sizing:border-box; }
+body { margin:0; background:#fff; color:#0b0b0b; font:12px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:900px; margin:0 auto; padding:20px 16px; }
+.bar { position:sticky; top:0; z-index:1; background:#f9f9f7; border-bottom:1px solid #d6d5ce; font-size:13px; color:#52514e; }
+.bar div { max-width:900px; margin:0 auto; padding:8px 16px; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; }
+.bar a { color:#2a78d6; } .bar .home { font-weight:600; }
+.bar select { font:inherit; padding:3px 6px; max-width:260px; }
+.bar button { font:inherit; padding:3px 14px; margin-left:auto; border:1px solid #0b0b0b; border-radius:6px; background:#0b0b0b; color:#fff; cursor:pointer; }
+.bar .tally { flex-basis:100%; font-size:12px; }
+header { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; border-bottom:2px solid #0b0b0b; padding-bottom:8px; }
+h1 { font-size:24px; margin:0; } header p { margin:2px 0 0; color:#52514e; }
+figure { margin:0; text-align:center; font-size:10px; color:#52514e; } figure img { height:90px; display:block; border:1px solid #ccc; }
+h2 { font-size:14px; margin:16px 0 6px; }
+table { border-collapse:collapse; width:100%; }
+th, td { text-align:left; padding:3px 6px; border-bottom:1px solid #d6d5ce; vertical-align:top; }
+.facts th { width:150px; color:#52514e; font-weight:600; }
+thead th { color:#52514e; border-bottom:1.5px solid #0b0b0b; }
+td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+.chart svg { display:block; width:100%; height:auto; }
+.pockets { columns:3; column-gap:14px; font-size:10.5px; }
+.pockets table { break-inside:auto; }
+.pockets tr { break-inside:avoid; }
+.pockets td, .pockets th { padding:1px 4px; white-space:nowrap; }
+tr.gap td { color:#898781; font-style:italic; }
+tr.flipped td { background:#d9e3f7; font-weight:600; } tr.placed_suspect td { background:#fbe3d8; } tr.placed_unverified td { background:#feefcc; }
+footer { margin-top:14px; font-size:10px; color:#898781; }
+.keep { break-inside:avoid; } .newpage { break-before:page; }
+@media print {
+  .bar { display:none; }
+  main { padding:0; max-width:none; }
+  tr.flipped td, tr.placed_suspect td, tr.placed_unverified td { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .chart { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head>
+<body>
+<nav class="bar"><div>
+<a class="home" href="../index.html#projects">&larr; Die sort report &middot; run2</a>
+<a href="BTX1.html">&larr; BTX1</a>
+<select aria-label="Go to a project's reel" autocomplete="off" onchange="location.href=this.value"><option value="0000.html">0000 - ICELab Test Chip</option><option value="AMM1_1.html">AMM1_1 - raybox-zero wafer.space run 2 half height</option><option value="AMM1_2.html">AMM1_2 - raybox-zero wafer.space run 2 half height</option><option value="APTX.html">APTX - Private</option><option value="AS04.html">AS04 - AS04 Multi-Project die using 3.3V SCL</option><option value="AS16.html">AS16 - AS16 CPU</option><option value="BTX1.html">BTX1 - BTX</option><option value="CAB1.html" selected>CAB1 - Cabrera CoB</option><option value="CAFE.html">CAFE - Expresso Ethernet Chip: 100Mbps Ethernet switch + Heat death of the Universe Beacon - 0.5x0.5 version - Preferred version</option><option value="CLON.html">CLON - Cloneless2</option><option value="COLF.html">COLF - Private</option><option value="CRD2.html">CRD2 - Private</option><option value="CSC1.html">CSC1 - Private</option><option value="DCO0.html">DCO0 - Standard Cell DCO+TDC</option><option value="DPK1.html">DPK1 - bio180</option><option value="DPK2.html">DPK2 - cordic-romless-x8</option><option value="EURO.html">EURO - EuroSynth</option><option value="FC01.html">FC01 - Flip Chip pad test version 1</option><option value="FS01.html">FS01 - Test chip with 3.3V SRAM blocks using regular design rules</option><option value="FS02.html">FS02 - Test chip with 3.3V SRAM blocks using SRAM design rules</option><option value="FS03.html">FS03 - Test chip with 5V SRAM blocks</option><option value="GD04_1.html">GD04_1 - Racquet Wide 1x0.5</option><option value="GD04_2.html">GD04_2 - Racquet Wide 1x0.5</option><option value="HZ80.html">HZ80 - FOSSi open-source replacement for Z80 classic 8-bit CPU (0.5 x 1 slot)</option><option value="ISHI.html">ISHI - ISHI-KAI_Multiple_Projects_WaferSapce-GF180-2</option><option value="KIAN.html">KIAN - KianV: A 32-bit RISC-V Linux SoC taped out on GF180MCU Run 2</option><option value="MEME_1.html">MEME_1 - Artwork Meme Chip</option><option value="MEME_2.html">MEME_2 - Artwork Meme Chip</option><option value="MOLE.html">MOLE - FABulous FPGA</option><option value="NAX1.html">NAX1 - Naxos CoB</option><option value="NEXA.html">NEXA - Private</option><option value="NSCN.html">NSCN - Private</option><option value="OCD3.html">OCD3 - 3.3V SRAM test 2</option><option value="PSOC.html">PSOC - Simplest possible PicoSoC implementation using wafer.space flow</option><option value="QBNL.html">QBNL - Private</option><option value="QZ80.html">QZ80 - FOSSi open-source replacement for Z80 classic 8-bit CPU (0.5 x 0.5 slot)</option><option value="RLCM.html">RLCM - RLCM: Test Passives For GF180MCUD</option><option value="SALU.html">SALU - Simple ALU</option><option value="SCC0.html">SCC0 - Private</option><option value="SCC1.html">SCC1 - Private</option><option value="SCDO.html">SCDO - Private</option><option value="SCML.html">SCML - ML-Audio SC</option><option value="SCMT.html">SCMT - microTheia</option><option value="SCTP.html">SCTP - SlugTPU</option><option value="SCUP.html">SCUP - GF180MCU Peripherals</option><option value="T0P3.html">T0P3 - Tiny Tapeout GF 0p3</option><option value="T26A.html">T26A - Tiny Tapeout GF 26a</option><option value="T26B.html">T26B - Tiny Tapeout GF 26b</option><option value="TQVA.html">TQVA - TinyQV - Crowdsourced Risc-V SoC</option><option value="TQVC.html">TQVC - TinyQV - Crowdsourced Risc-V SoC (1x0.5)</option><option value="TQVD.html">TQVD - TinyQV - RISC-V SoC with HDMI output</option><option value="TQVE.html">TQVE - TinyQV - RISC-V SoC with experimental pad setup</option><option value="WSLG.html">WSLG - Wafer.Space Logo</option><option value="XQAC.html">XQAC - Private</option></select>
+<a href="CAFE.html">CAFE &rarr;</a>
+<a href="https://github.com/wafer-space/ws-run2-pickmap">GitHub</a>
+<button onclick="window.print()" title="or save as PDF from the print dialog">Print</button>
+<span class="tally">This project, all wafers: 216 mapped &middot; 209 good &middot; 3 unverified &middot; 2 flipped &middot; 2 lost &middot; 2 on reticle reels, not this one</span>
+</div></nav>
+<main>
+<header><div><h1>Reel CAB1</h1><p>Cabrera CoB &middot; die sort run2 &middot; made 2026-11-03</p></div><figure><img src="../photos/projects/CAB1_pocket.jpg" alt="CAB1 in its pocket"><figcaption>CAB1 in its pocket</figcaption></figure></header>
+<table class="facts"><tr><th>Reel</th><td>CAB1</td></tr><tr><th>Project</th><td>CAB1 - Cabrera CoB</td></tr><tr><th>Die size</th><td>1x0p5 (width x height, of a 4.0 x 5.18 mm slot)</td></tr><tr><th>Batch</th><td>run2</td></tr><tr><th>Die order</th><td>As it comes off: #1 is the first die off, the last one placed</td></tr><tr><th>Dies on the reel</th><td>212, in 230 pockets (est.)</td></tr><tr><th>Empty pockets</th><td>18, logged by the machine between wafers</td></tr><tr><th>Flipped, die #</th><td>none</td></tr><tr><th>Suspect, die #</th><td>none</td></tr><tr><th>Unverified, die #</th><td>180, 182, 204</td></tr><tr><th>Lost, not on the reel</th><td>2 of this project&#x27;s dies (dropped, missed or taken back out)</td></tr></table>
+<div class="keep">
+<h2>Wafer by wafer</h2>
+<table><thead><tr><th>Wafer</th><th class="n">Die #</th><th class="n">Pockets (est.)</th><th class="n">Dies</th>
+<th class="n">Good</th><th class="n">Unverified</th><th class="n">Suspect</th><th class="n">Flipped</th>
+<th class="n">Empty before</th><th>Placed</th></tr></thead><tbody><tr><td>wafer6</td><td class="n">1-36</td><td class="n">4-39</td><td class="n">36</td><td class="n">36</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-24 16:53 - 17:02</td></tr><tr><td>wafer5</td><td class="n">37-72</td><td class="n">43-78</td><td class="n">36</td><td class="n">36</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-24 15:09 - 15:18</td></tr><tr><td>wafer4</td><td class="n">73-108</td><td class="n">82-117</td><td class="n">36</td><td class="n">36</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-24 04:25 - 04:34</td></tr><tr><td>wafer3</td><td class="n">109-144</td><td class="n">121-156</td><td class="n">36</td><td class="n">36</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-24 02:54 - 03:02</td></tr><tr><td>wafer2</td><td class="n">145-179</td><td class="n">160-194</td><td class="n">35</td><td class="n">35</td><td class="n"></td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-24 01:30 - 01:39</td></tr><tr><td>wafer1</td><td class="n">180-212</td><td class="n">198-230</td><td class="n">33</td><td class="n">30</td><td class="n">3</td><td class="n"></td><td class="n"></td><td class="n">3</td><td>2026-10-23 23:58 - 00:07</td></tr></tbody></table>
+</div>
+<h2>The reel</h2>
+<div class="chart keep"><svg xmlns="http://www.w3.org/2000/svg" width="1100" height="318" viewBox="0 0 1100 318" font-family="system-ui, -apple-system, Segoe UI, sans-serif" role="img" aria-label="CAB1 reel">
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<rect x="0.0" y="5.5" width="11.7" height="11.7" rx="2" fill="#0ca30c"/>
+<text x="16.3" y="16.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal">✓ Good 209</text>
+<rect x="102.7" y="5.5" width="11.7" height="11.7" rx="2" fill="#fab219"/>
+<text x="119.0" y="16.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal">? Placed, unverified 3</text>
+<rect x="297.7" y="5.5" width="11.7" height="11.7" rx="2" fill="#ec835a"/>
+<text x="314.1" y="16.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal">! Placed, suspect 0</text>
+<rect x="469.7" y="5.5" width="11.7" height="11.7" rx="2" fill="#2a5fc9"/>
+<text x="486.0" y="16.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal">↻ Flipped 0</text>
+<text x="78.0" y="36.0" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">first off the reel →</text>
+<text x="68.0" y="64.9" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer6</text>
+<rect x="78.0" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #212 placed (pocket ~227), #1 off (pocket ~4)
+CAB1 - Cabrera CoB
+wafer6 S2_1/C2R5
+Good</title></rect>
+<text x="89.2" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">1</text>
+<rect x="103.4" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #211 placed (pocket ~226), #2 off (pocket ~5)
+CAB1 - Cabrera CoB
+wafer6 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">2</text>
+<rect x="128.8" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #210 placed (pocket ~225), #3 off (pocket ~6)
+CAB1 - Cabrera CoB
+wafer6 S2_-1/C2R5
+Good</title></rect>
+<text x="140.1" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">3</text>
+<rect x="154.3" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #209 placed (pocket ~224), #4 off (pocket ~7)
+CAB1 - Cabrera CoB
+wafer6 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">4</text>
+<rect x="179.7" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #208 placed (pocket ~223), #5 off (pocket ~8)
+CAB1 - Cabrera CoB
+wafer6 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">5</text>
+<rect x="205.1" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #207 placed (pocket ~222), #6 off (pocket ~9)
+CAB1 - Cabrera CoB
+wafer6 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">6</text>
+<rect x="230.5" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #206 placed (pocket ~221), #7 off (pocket ~10)
+CAB1 - Cabrera CoB
+wafer6 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">7</text>
+<rect x="255.9" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #205 placed (pocket ~220), #8 off (pocket ~11)
+CAB1 - Cabrera CoB
+wafer6 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">8</text>
+<rect x="281.4" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #204 placed (pocket ~219), #9 off (pocket ~12)
+CAB1 - Cabrera CoB
+wafer6 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">9</text>
+<rect x="306.8" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #203 placed (pocket ~218), #10 off (pocket ~13)
+CAB1 - Cabrera CoB
+wafer6 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">10</text>
+<rect x="332.2" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #202 placed (pocket ~217), #11 off (pocket ~14)
+CAB1 - Cabrera CoB
+wafer6 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">11</text>
+<rect x="357.6" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #201 placed (pocket ~216), #12 off (pocket ~15)
+CAB1 - Cabrera CoB
+wafer6 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">12</text>
+<rect x="383.1" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #200 placed (pocket ~215), #13 off (pocket ~16)
+CAB1 - Cabrera CoB
+wafer6 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">13</text>
+<rect x="408.5" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #199 placed (pocket ~214), #14 off (pocket ~17)
+CAB1 - Cabrera CoB
+wafer6 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">14</text>
+<rect x="433.9" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #198 placed (pocket ~213), #15 off (pocket ~18)
+CAB1 - Cabrera CoB
+wafer6 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">15</text>
+<rect x="459.3" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #197 placed (pocket ~212), #16 off (pocket ~19)
+CAB1 - Cabrera CoB
+wafer6 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">16</text>
+<rect x="484.7" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #196 placed (pocket ~211), #17 off (pocket ~20)
+CAB1 - Cabrera CoB
+wafer6 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">17</text>
+<rect x="510.2" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #195 placed (pocket ~210), #18 off (pocket ~21)
+CAB1 - Cabrera CoB
+wafer6 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">18</text>
+<rect x="535.6" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #194 placed (pocket ~209), #19 off (pocket ~22)
+CAB1 - Cabrera CoB
+wafer6 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">19</text>
+<rect x="561.0" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #193 placed (pocket ~208), #20 off (pocket ~23)
+CAB1 - Cabrera CoB
+wafer6 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">20</text>
+<rect x="586.4" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #192 placed (pocket ~207), #21 off (pocket ~24)
+CAB1 - Cabrera CoB
+wafer6 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">21</text>
+<rect x="611.8" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #191 placed (pocket ~206), #22 off (pocket ~25)
+CAB1 - Cabrera CoB
+wafer6 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">22</text>
+<rect x="637.3" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #190 placed (pocket ~205), #23 off (pocket ~26)
+CAB1 - Cabrera CoB
+wafer6 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">23</text>
+<rect x="662.7" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #189 placed (pocket ~204), #24 off (pocket ~27)
+CAB1 - Cabrera CoB
+wafer6 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">24</text>
+<rect x="688.1" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #188 placed (pocket ~203), #25 off (pocket ~28)
+CAB1 - Cabrera CoB
+wafer6 S-1_-3/C2R5
+Good</title></rect>
+<text x="699.3" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">25</text>
+<rect x="713.5" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #187 placed (pocket ~202), #26 off (pocket ~29)
+CAB1 - Cabrera CoB
+wafer6 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">26</text>
+<rect x="738.9" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #186 placed (pocket ~201), #27 off (pocket ~30)
+CAB1 - Cabrera CoB
+wafer6 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">27</text>
+<rect x="764.4" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #185 placed (pocket ~200), #28 off (pocket ~31)
+CAB1 - Cabrera CoB
+wafer6 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">28</text>
+<rect x="789.8" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #184 placed (pocket ~199), #29 off (pocket ~32)
+CAB1 - Cabrera CoB
+wafer6 S-2_-1/C2R5
+Good</title></rect>
+<text x="801.0" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">29</text>
+<rect x="815.2" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #183 placed (pocket ~198), #30 off (pocket ~33)
+CAB1 - Cabrera CoB
+wafer6 S-2_-2/C2R5
+Good</title></rect>
+<text x="826.4" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">30</text>
+<rect x="840.6" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #182 placed (pocket ~197), #31 off (pocket ~34)
+CAB1 - Cabrera CoB
+wafer6 S-2_-3/C2R5
+Good</title></rect>
+<text x="851.8" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">31</text>
+<rect x="866.1" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #181 placed (pocket ~196), #32 off (pocket ~35)
+CAB1 - Cabrera CoB
+wafer6 S-2_-4/C2R5
+Good</title></rect>
+<text x="877.3" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">32</text>
+<rect x="891.5" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #180 placed (pocket ~195), #33 off (pocket ~36)
+CAB1 - Cabrera CoB
+wafer6 S-3_0/C2R5
+Good</title></rect>
+<text x="902.7" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">33</text>
+<rect x="916.9" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #179 placed (pocket ~194), #34 off (pocket ~37)
+CAB1 - Cabrera CoB
+wafer6 S-3_-1/C2R5
+Good</title></rect>
+<text x="928.1" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">34</text>
+<rect x="942.3" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #178 placed (pocket ~193), #35 off (pocket ~38)
+CAB1 - Cabrera CoB
+wafer6 S-3_-2/C2R5
+Good</title></rect>
+<text x="953.5" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">35</text>
+<rect x="967.7" y="44.0" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #177 placed (pocket ~192), #36 off (pocket ~39)
+CAB1 - Cabrera CoB
+wafer6 S-3_-3/C2R5
+Good</title></rect>
+<text x="978.9" y="62.9" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">36</text>
+<text x="1052.0" y="64.9" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">36 dies</text>
+<text x="68.0" y="110.7" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer5</text>
+<rect x="78.0" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #176 placed (pocket ~188), #37 off (pocket ~43)
+CAB1 - Cabrera CoB
+wafer5 S2_1/C2R5
+Good</title></rect>
+<text x="89.2" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">37</text>
+<rect x="103.4" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #175 placed (pocket ~187), #38 off (pocket ~44)
+CAB1 - Cabrera CoB
+wafer5 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">38</text>
+<rect x="128.8" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #174 placed (pocket ~186), #39 off (pocket ~45)
+CAB1 - Cabrera CoB
+wafer5 S2_-1/C2R5
+Good</title></rect>
+<text x="140.1" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">39</text>
+<rect x="154.3" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #173 placed (pocket ~185), #40 off (pocket ~46)
+CAB1 - Cabrera CoB
+wafer5 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">40</text>
+<rect x="179.7" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #172 placed (pocket ~184), #41 off (pocket ~47)
+CAB1 - Cabrera CoB
+wafer5 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">41</text>
+<rect x="205.1" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #171 placed (pocket ~183), #42 off (pocket ~48)
+CAB1 - Cabrera CoB
+wafer5 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">42</text>
+<rect x="230.5" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #170 placed (pocket ~182), #43 off (pocket ~49)
+CAB1 - Cabrera CoB
+wafer5 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">43</text>
+<rect x="255.9" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #169 placed (pocket ~181), #44 off (pocket ~50)
+CAB1 - Cabrera CoB
+wafer5 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">44</text>
+<rect x="281.4" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #168 placed (pocket ~180), #45 off (pocket ~51)
+CAB1 - Cabrera CoB
+wafer5 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">45</text>
+<rect x="306.8" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #167 placed (pocket ~179), #46 off (pocket ~52)
+CAB1 - Cabrera CoB
+wafer5 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">46</text>
+<rect x="332.2" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #166 placed (pocket ~178), #47 off (pocket ~53)
+CAB1 - Cabrera CoB
+wafer5 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">47</text>
+<rect x="357.6" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #165 placed (pocket ~177), #48 off (pocket ~54)
+CAB1 - Cabrera CoB
+wafer5 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">48</text>
+<rect x="383.1" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #164 placed (pocket ~176), #49 off (pocket ~55)
+CAB1 - Cabrera CoB
+wafer5 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">49</text>
+<rect x="408.5" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #163 placed (pocket ~175), #50 off (pocket ~56)
+CAB1 - Cabrera CoB
+wafer5 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">50</text>
+<rect x="433.9" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #162 placed (pocket ~174), #51 off (pocket ~57)
+CAB1 - Cabrera CoB
+wafer5 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">51</text>
+<rect x="459.3" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #161 placed (pocket ~173), #52 off (pocket ~58)
+CAB1 - Cabrera CoB
+wafer5 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">52</text>
+<rect x="484.7" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #160 placed (pocket ~172), #53 off (pocket ~59)
+CAB1 - Cabrera CoB
+wafer5 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">53</text>
+<rect x="510.2" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #159 placed (pocket ~171), #54 off (pocket ~60)
+CAB1 - Cabrera CoB
+wafer5 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">54</text>
+<rect x="535.6" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #158 placed (pocket ~170), #55 off (pocket ~61)
+CAB1 - Cabrera CoB
+wafer5 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">55</text>
+<rect x="561.0" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #157 placed (pocket ~169), #56 off (pocket ~62)
+CAB1 - Cabrera CoB
+wafer5 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">56</text>
+<rect x="586.4" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #156 placed (pocket ~168), #57 off (pocket ~63)
+CAB1 - Cabrera CoB
+wafer5 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">57</text>
+<rect x="611.8" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #155 placed (pocket ~167), #58 off (pocket ~64)
+CAB1 - Cabrera CoB
+wafer5 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">58</text>
+<rect x="637.3" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #154 placed (pocket ~166), #59 off (pocket ~65)
+CAB1 - Cabrera CoB
+wafer5 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">59</text>
+<rect x="662.7" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #153 placed (pocket ~165), #60 off (pocket ~66)
+CAB1 - Cabrera CoB
+wafer5 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">60</text>
+<rect x="688.1" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #152 placed (pocket ~164), #61 off (pocket ~67)
+CAB1 - Cabrera CoB
+wafer5 S-1_-3/C2R5
+Good</title></rect>
+<text x="699.3" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">61</text>
+<rect x="713.5" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #151 placed (pocket ~163), #62 off (pocket ~68)
+CAB1 - Cabrera CoB
+wafer5 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">62</text>
+<rect x="738.9" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #150 placed (pocket ~162), #63 off (pocket ~69)
+CAB1 - Cabrera CoB
+wafer5 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">63</text>
+<rect x="764.4" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #149 placed (pocket ~161), #64 off (pocket ~70)
+CAB1 - Cabrera CoB
+wafer5 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">64</text>
+<rect x="789.8" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #148 placed (pocket ~160), #65 off (pocket ~71)
+CAB1 - Cabrera CoB
+wafer5 S-2_-1/C2R5
+Good</title></rect>
+<text x="801.0" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">65</text>
+<rect x="815.2" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #147 placed (pocket ~159), #66 off (pocket ~72)
+CAB1 - Cabrera CoB
+wafer5 S-2_-2/C2R5
+Good</title></rect>
+<text x="826.4" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">66</text>
+<rect x="840.6" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #146 placed (pocket ~158), #67 off (pocket ~73)
+CAB1 - Cabrera CoB
+wafer5 S-2_-3/C2R5
+Good</title></rect>
+<text x="851.8" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">67</text>
+<rect x="866.1" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #145 placed (pocket ~157), #68 off (pocket ~74)
+CAB1 - Cabrera CoB
+wafer5 S-2_-4/C2R5
+Good</title></rect>
+<text x="877.3" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">68</text>
+<rect x="891.5" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #144 placed (pocket ~156), #69 off (pocket ~75)
+CAB1 - Cabrera CoB
+wafer5 S-3_0/C2R5
+Good</title></rect>
+<text x="902.7" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">69</text>
+<rect x="916.9" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #143 placed (pocket ~155), #70 off (pocket ~76)
+CAB1 - Cabrera CoB
+wafer5 S-3_-1/C2R5
+Good</title></rect>
+<text x="928.1" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">70</text>
+<rect x="942.3" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #142 placed (pocket ~154), #71 off (pocket ~77)
+CAB1 - Cabrera CoB
+wafer5 S-3_-2/C2R5
+Good</title></rect>
+<text x="953.5" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">71</text>
+<rect x="967.7" y="89.8" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #141 placed (pocket ~153), #72 off (pocket ~78)
+CAB1 - Cabrera CoB
+wafer5 S-3_-3/C2R5
+Good</title></rect>
+<text x="978.9" y="108.7" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">72</text>
+<text x="1052.0" y="110.7" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">36 dies</text>
+<text x="68.0" y="156.4" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer4</text>
+<rect x="78.0" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #140 placed (pocket ~149), #73 off (pocket ~82)
+CAB1 - Cabrera CoB
+wafer4 S2_1/C2R5
+Good</title></rect>
+<text x="89.2" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">73</text>
+<rect x="103.4" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #139 placed (pocket ~148), #74 off (pocket ~83)
+CAB1 - Cabrera CoB
+wafer4 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">74</text>
+<rect x="128.8" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #138 placed (pocket ~147), #75 off (pocket ~84)
+CAB1 - Cabrera CoB
+wafer4 S2_-1/C2R5
+Good</title></rect>
+<text x="140.1" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">75</text>
+<rect x="154.3" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #137 placed (pocket ~146), #76 off (pocket ~85)
+CAB1 - Cabrera CoB
+wafer4 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">76</text>
+<rect x="179.7" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #136 placed (pocket ~145), #77 off (pocket ~86)
+CAB1 - Cabrera CoB
+wafer4 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">77</text>
+<rect x="205.1" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #135 placed (pocket ~144), #78 off (pocket ~87)
+CAB1 - Cabrera CoB
+wafer4 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">78</text>
+<rect x="230.5" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #134 placed (pocket ~143), #79 off (pocket ~88)
+CAB1 - Cabrera CoB
+wafer4 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">79</text>
+<rect x="255.9" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #133 placed (pocket ~142), #80 off (pocket ~89)
+CAB1 - Cabrera CoB
+wafer4 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">80</text>
+<rect x="281.4" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #132 placed (pocket ~141), #81 off (pocket ~90)
+CAB1 - Cabrera CoB
+wafer4 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">81</text>
+<rect x="306.8" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #131 placed (pocket ~140), #82 off (pocket ~91)
+CAB1 - Cabrera CoB
+wafer4 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">82</text>
+<rect x="332.2" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #130 placed (pocket ~139), #83 off (pocket ~92)
+CAB1 - Cabrera CoB
+wafer4 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">83</text>
+<rect x="357.6" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #129 placed (pocket ~138), #84 off (pocket ~93)
+CAB1 - Cabrera CoB
+wafer4 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">84</text>
+<rect x="383.1" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #128 placed (pocket ~137), #85 off (pocket ~94)
+CAB1 - Cabrera CoB
+wafer4 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">85</text>
+<rect x="408.5" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #127 placed (pocket ~136), #86 off (pocket ~95)
+CAB1 - Cabrera CoB
+wafer4 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">86</text>
+<rect x="433.9" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #126 placed (pocket ~135), #87 off (pocket ~96)
+CAB1 - Cabrera CoB
+wafer4 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">87</text>
+<rect x="459.3" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #125 placed (pocket ~134), #88 off (pocket ~97)
+CAB1 - Cabrera CoB
+wafer4 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">88</text>
+<rect x="484.7" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #124 placed (pocket ~133), #89 off (pocket ~98)
+CAB1 - Cabrera CoB
+wafer4 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">89</text>
+<rect x="510.2" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #123 placed (pocket ~132), #90 off (pocket ~99)
+CAB1 - Cabrera CoB
+wafer4 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">90</text>
+<rect x="535.6" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #122 placed (pocket ~131), #91 off (pocket ~100)
+CAB1 - Cabrera CoB
+wafer4 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">91</text>
+<rect x="561.0" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #121 placed (pocket ~130), #92 off (pocket ~101)
+CAB1 - Cabrera CoB
+wafer4 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">92</text>
+<rect x="586.4" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #120 placed (pocket ~129), #93 off (pocket ~102)
+CAB1 - Cabrera CoB
+wafer4 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">93</text>
+<rect x="611.8" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #119 placed (pocket ~128), #94 off (pocket ~103)
+CAB1 - Cabrera CoB
+wafer4 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">94</text>
+<rect x="637.3" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #118 placed (pocket ~127), #95 off (pocket ~104)
+CAB1 - Cabrera CoB
+wafer4 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">95</text>
+<rect x="662.7" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #117 placed (pocket ~126), #96 off (pocket ~105)
+CAB1 - Cabrera CoB
+wafer4 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">96</text>
+<rect x="688.1" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #116 placed (pocket ~125), #97 off (pocket ~106)
+CAB1 - Cabrera CoB
+wafer4 S-1_-3/C2R5
+Good</title></rect>
+<text x="699.3" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">97</text>
+<rect x="713.5" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #115 placed (pocket ~124), #98 off (pocket ~107)
+CAB1 - Cabrera CoB
+wafer4 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">98</text>
+<rect x="738.9" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #114 placed (pocket ~123), #99 off (pocket ~108)
+CAB1 - Cabrera CoB
+wafer4 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">99</text>
+<rect x="764.4" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #113 placed (pocket ~122), #100 off (pocket ~109)
+CAB1 - Cabrera CoB
+wafer4 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">100</text>
+<rect x="789.8" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #112 placed (pocket ~121), #101 off (pocket ~110)
+CAB1 - Cabrera CoB
+wafer4 S-2_-1/C2R5
+Good</title></rect>
+<text x="801.0" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">101</text>
+<rect x="815.2" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #111 placed (pocket ~120), #102 off (pocket ~111)
+CAB1 - Cabrera CoB
+wafer4 S-2_-2/C2R5
+Good</title></rect>
+<text x="826.4" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">102</text>
+<rect x="840.6" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #110 placed (pocket ~119), #103 off (pocket ~112)
+CAB1 - Cabrera CoB
+wafer4 S-2_-3/C2R5
+Good</title></rect>
+<text x="851.8" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">103</text>
+<rect x="866.1" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #109 placed (pocket ~118), #104 off (pocket ~113)
+CAB1 - Cabrera CoB
+wafer4 S-2_-4/C2R5
+Good</title></rect>
+<text x="877.3" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">104</text>
+<rect x="891.5" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #108 placed (pocket ~117), #105 off (pocket ~114)
+CAB1 - Cabrera CoB
+wafer4 S-3_0/C2R5
+Good</title></rect>
+<text x="902.7" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">105</text>
+<rect x="916.9" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #107 placed (pocket ~116), #106 off (pocket ~115)
+CAB1 - Cabrera CoB
+wafer4 S-3_-1/C2R5
+Good</title></rect>
+<text x="928.1" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">106</text>
+<rect x="942.3" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #106 placed (pocket ~115), #107 off (pocket ~116)
+CAB1 - Cabrera CoB
+wafer4 S-3_-2/C2R5
+Good</title></rect>
+<text x="953.5" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">107</text>
+<rect x="967.7" y="135.6" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #105 placed (pocket ~114), #108 off (pocket ~117)
+CAB1 - Cabrera CoB
+wafer4 S-3_-3/C2R5
+Good</title></rect>
+<text x="978.9" y="154.5" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">108</text>
+<text x="1052.0" y="156.4" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">36 dies</text>
+<text x="68.0" y="202.2" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer3</text>
+<rect x="78.0" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #104 placed (pocket ~110), #109 off (pocket ~121)
+CAB1 - Cabrera CoB
+wafer3 S2_1/C2R5
+Good</title></rect>
+<text x="89.2" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">109</text>
+<rect x="103.4" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #103 placed (pocket ~109), #110 off (pocket ~122)
+CAB1 - Cabrera CoB
+wafer3 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">110</text>
+<rect x="128.8" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #102 placed (pocket ~108), #111 off (pocket ~123)
+CAB1 - Cabrera CoB
+wafer3 S2_-1/C2R5
+Good</title></rect>
+<text x="140.1" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">111</text>
+<rect x="154.3" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #101 placed (pocket ~107), #112 off (pocket ~124)
+CAB1 - Cabrera CoB
+wafer3 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">112</text>
+<rect x="179.7" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #100 placed (pocket ~106), #113 off (pocket ~125)
+CAB1 - Cabrera CoB
+wafer3 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">113</text>
+<rect x="205.1" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #99 placed (pocket ~105), #114 off (pocket ~126)
+CAB1 - Cabrera CoB
+wafer3 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">114</text>
+<rect x="230.5" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #98 placed (pocket ~104), #115 off (pocket ~127)
+CAB1 - Cabrera CoB
+wafer3 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">115</text>
+<rect x="255.9" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #97 placed (pocket ~103), #116 off (pocket ~128)
+CAB1 - Cabrera CoB
+wafer3 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">116</text>
+<rect x="281.4" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #96 placed (pocket ~102), #117 off (pocket ~129)
+CAB1 - Cabrera CoB
+wafer3 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">117</text>
+<rect x="306.8" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #95 placed (pocket ~101), #118 off (pocket ~130)
+CAB1 - Cabrera CoB
+wafer3 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">118</text>
+<rect x="332.2" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #94 placed (pocket ~100), #119 off (pocket ~131)
+CAB1 - Cabrera CoB
+wafer3 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">119</text>
+<rect x="357.6" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #93 placed (pocket ~99), #120 off (pocket ~132)
+CAB1 - Cabrera CoB
+wafer3 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">120</text>
+<rect x="383.1" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #92 placed (pocket ~98), #121 off (pocket ~133)
+CAB1 - Cabrera CoB
+wafer3 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">121</text>
+<rect x="408.5" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #91 placed (pocket ~97), #122 off (pocket ~134)
+CAB1 - Cabrera CoB
+wafer3 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">122</text>
+<rect x="433.9" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #90 placed (pocket ~96), #123 off (pocket ~135)
+CAB1 - Cabrera CoB
+wafer3 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">123</text>
+<rect x="459.3" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #89 placed (pocket ~95), #124 off (pocket ~136)
+CAB1 - Cabrera CoB
+wafer3 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">124</text>
+<rect x="484.7" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #88 placed (pocket ~94), #125 off (pocket ~137)
+CAB1 - Cabrera CoB
+wafer3 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">125</text>
+<rect x="510.2" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #87 placed (pocket ~93), #126 off (pocket ~138)
+CAB1 - Cabrera CoB
+wafer3 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">126</text>
+<rect x="535.6" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #86 placed (pocket ~92), #127 off (pocket ~139)
+CAB1 - Cabrera CoB
+wafer3 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">127</text>
+<rect x="561.0" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #85 placed (pocket ~91), #128 off (pocket ~140)
+CAB1 - Cabrera CoB
+wafer3 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">128</text>
+<rect x="586.4" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #84 placed (pocket ~90), #129 off (pocket ~141)
+CAB1 - Cabrera CoB
+wafer3 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">129</text>
+<rect x="611.8" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #83 placed (pocket ~89), #130 off (pocket ~142)
+CAB1 - Cabrera CoB
+wafer3 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">130</text>
+<rect x="637.3" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #82 placed (pocket ~88), #131 off (pocket ~143)
+CAB1 - Cabrera CoB
+wafer3 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">131</text>
+<rect x="662.7" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #81 placed (pocket ~87), #132 off (pocket ~144)
+CAB1 - Cabrera CoB
+wafer3 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">132</text>
+<rect x="688.1" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #80 placed (pocket ~86), #133 off (pocket ~145)
+CAB1 - Cabrera CoB
+wafer3 S-1_-3/C2R5
+Good</title></rect>
+<text x="699.3" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">133</text>
+<rect x="713.5" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #79 placed (pocket ~85), #134 off (pocket ~146)
+CAB1 - Cabrera CoB
+wafer3 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">134</text>
+<rect x="738.9" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #78 placed (pocket ~84), #135 off (pocket ~147)
+CAB1 - Cabrera CoB
+wafer3 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">135</text>
+<rect x="764.4" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #77 placed (pocket ~83), #136 off (pocket ~148)
+CAB1 - Cabrera CoB
+wafer3 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">136</text>
+<rect x="789.8" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #76 placed (pocket ~82), #137 off (pocket ~149)
+CAB1 - Cabrera CoB
+wafer3 S-2_-1/C2R5
+Good</title></rect>
+<text x="801.0" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">137</text>
+<rect x="815.2" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #75 placed (pocket ~81), #138 off (pocket ~150)
+CAB1 - Cabrera CoB
+wafer3 S-2_-2/C2R5
+Good</title></rect>
+<text x="826.4" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">138</text>
+<rect x="840.6" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #74 placed (pocket ~80), #139 off (pocket ~151)
+CAB1 - Cabrera CoB
+wafer3 S-2_-3/C2R5
+Good</title></rect>
+<text x="851.8" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">139</text>
+<rect x="866.1" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #73 placed (pocket ~79), #140 off (pocket ~152)
+CAB1 - Cabrera CoB
+wafer3 S-2_-4/C2R5
+Good</title></rect>
+<text x="877.3" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">140</text>
+<rect x="891.5" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #72 placed (pocket ~78), #141 off (pocket ~153)
+CAB1 - Cabrera CoB
+wafer3 S-3_0/C2R5
+Good</title></rect>
+<text x="902.7" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">141</text>
+<rect x="916.9" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #71 placed (pocket ~77), #142 off (pocket ~154)
+CAB1 - Cabrera CoB
+wafer3 S-3_-1/C2R5
+Good</title></rect>
+<text x="928.1" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">142</text>
+<rect x="942.3" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #70 placed (pocket ~76), #143 off (pocket ~155)
+CAB1 - Cabrera CoB
+wafer3 S-3_-2/C2R5
+Good</title></rect>
+<text x="953.5" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">143</text>
+<rect x="967.7" y="181.3" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #69 placed (pocket ~75), #144 off (pocket ~156)
+CAB1 - Cabrera CoB
+wafer3 S-3_-3/C2R5
+Good</title></rect>
+<text x="978.9" y="200.3" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">144</text>
+<text x="1052.0" y="202.2" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">36 dies</text>
+<text x="68.0" y="248.0" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer2</text>
+<rect x="78.0" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #68 placed (pocket ~71), #145 off (pocket ~160)
+CAB1 - Cabrera CoB
+wafer2 S2_1/C2R5
+Good</title></rect>
+<text x="89.2" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">145</text>
+<rect x="103.4" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #67 placed (pocket ~70), #146 off (pocket ~161)
+CAB1 - Cabrera CoB
+wafer2 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">146</text>
+<rect x="128.8" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #66 placed (pocket ~69), #147 off (pocket ~162)
+CAB1 - Cabrera CoB
+wafer2 S2_-1/C2R5
+Good</title></rect>
+<text x="140.1" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">147</text>
+<rect x="154.3" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #65 placed (pocket ~68), #148 off (pocket ~163)
+CAB1 - Cabrera CoB
+wafer2 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">148</text>
+<rect x="179.7" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #64 placed (pocket ~67), #149 off (pocket ~164)
+CAB1 - Cabrera CoB
+wafer2 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">149</text>
+<rect x="205.1" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #63 placed (pocket ~66), #150 off (pocket ~165)
+CAB1 - Cabrera CoB
+wafer2 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">150</text>
+<rect x="230.5" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #62 placed (pocket ~65), #151 off (pocket ~166)
+CAB1 - Cabrera CoB
+wafer2 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">151</text>
+<rect x="255.9" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #61 placed (pocket ~64), #152 off (pocket ~167)
+CAB1 - Cabrera CoB
+wafer2 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">152</text>
+<rect x="281.4" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #60 placed (pocket ~63), #153 off (pocket ~168)
+CAB1 - Cabrera CoB
+wafer2 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">153</text>
+<rect x="306.8" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #59 placed (pocket ~62), #154 off (pocket ~169)
+CAB1 - Cabrera CoB
+wafer2 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">154</text>
+<rect x="332.2" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #58 placed (pocket ~61), #155 off (pocket ~170)
+CAB1 - Cabrera CoB
+wafer2 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">155</text>
+<rect x="357.6" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #57 placed (pocket ~60), #156 off (pocket ~171)
+CAB1 - Cabrera CoB
+wafer2 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">156</text>
+<rect x="383.1" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #56 placed (pocket ~59), #157 off (pocket ~172)
+CAB1 - Cabrera CoB
+wafer2 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">157</text>
+<rect x="408.5" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #55 placed (pocket ~58), #158 off (pocket ~173)
+CAB1 - Cabrera CoB
+wafer2 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">158</text>
+<rect x="433.9" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #54 placed (pocket ~57), #159 off (pocket ~174)
+CAB1 - Cabrera CoB
+wafer2 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">159</text>
+<rect x="459.3" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #53 placed (pocket ~56), #160 off (pocket ~175)
+CAB1 - Cabrera CoB
+wafer2 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">160</text>
+<rect x="484.7" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #52 placed (pocket ~55), #161 off (pocket ~176)
+CAB1 - Cabrera CoB
+wafer2 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">161</text>
+<rect x="510.2" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #51 placed (pocket ~54), #162 off (pocket ~177)
+CAB1 - Cabrera CoB
+wafer2 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">162</text>
+<rect x="535.6" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #50 placed (pocket ~53), #163 off (pocket ~178)
+CAB1 - Cabrera CoB
+wafer2 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">163</text>
+<rect x="561.0" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #49 placed (pocket ~52), #164 off (pocket ~179)
+CAB1 - Cabrera CoB
+wafer2 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">164</text>
+<rect x="586.4" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #48 placed (pocket ~51), #165 off (pocket ~180)
+CAB1 - Cabrera CoB
+wafer2 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">165</text>
+<rect x="611.8" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #47 placed (pocket ~50), #166 off (pocket ~181)
+CAB1 - Cabrera CoB
+wafer2 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">166</text>
+<rect x="637.3" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #46 placed (pocket ~49), #167 off (pocket ~182)
+CAB1 - Cabrera CoB
+wafer2 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">167</text>
+<rect x="662.7" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #45 placed (pocket ~48), #168 off (pocket ~183)
+CAB1 - Cabrera CoB
+wafer2 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">168</text>
+<rect x="688.1" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #44 placed (pocket ~47), #169 off (pocket ~184)
+CAB1 - Cabrera CoB
+wafer2 S-1_-3/C2R5
+Good</title></rect>
+<text x="699.3" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">169</text>
+<rect x="713.5" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #43 placed (pocket ~46), #170 off (pocket ~185)
+CAB1 - Cabrera CoB
+wafer2 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">170</text>
+<rect x="738.9" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #42 placed (pocket ~45), #171 off (pocket ~186)
+CAB1 - Cabrera CoB
+wafer2 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">171</text>
+<rect x="764.4" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #41 placed (pocket ~44), #172 off (pocket ~187)
+CAB1 - Cabrera CoB
+wafer2 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">172</text>
+<rect x="789.8" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #40 placed (pocket ~43), #173 off (pocket ~188)
+CAB1 - Cabrera CoB
+wafer2 S-2_-2/C2R5
+Good</title></rect>
+<text x="801.0" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">173</text>
+<rect x="815.2" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #39 placed (pocket ~42), #174 off (pocket ~189)
+CAB1 - Cabrera CoB
+wafer2 S-2_-3/C2R5
+Good</title></rect>
+<text x="826.4" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">174</text>
+<rect x="840.6" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #38 placed (pocket ~41), #175 off (pocket ~190)
+CAB1 - Cabrera CoB
+wafer2 S-2_-4/C2R5
+Good</title></rect>
+<text x="851.8" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">175</text>
+<rect x="866.1" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #37 placed (pocket ~40), #176 off (pocket ~191)
+CAB1 - Cabrera CoB
+wafer2 S-3_0/C2R5
+Good</title></rect>
+<text x="877.3" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">176</text>
+<rect x="891.5" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #36 placed (pocket ~39), #177 off (pocket ~192)
+CAB1 - Cabrera CoB
+wafer2 S-3_-1/C2R5
+Good</title></rect>
+<text x="902.7" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">177</text>
+<rect x="916.9" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #35 placed (pocket ~38), #178 off (pocket ~193)
+CAB1 - Cabrera CoB
+wafer2 S-3_-2/C2R5
+Good</title></rect>
+<text x="928.1" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">178</text>
+<rect x="942.3" y="227.1" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #34 placed (pocket ~37), #179 off (pocket ~194)
+CAB1 - Cabrera CoB
+wafer2 S-3_-3/C2R5
+Good</title></rect>
+<text x="953.5" y="246.0" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">179</text>
+<text x="1052.0" y="248.0" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">35 dies</text>
+<text x="68.0" y="293.8" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600">wafer1</text>
+<rect x="78.0" y="272.9" width="22.4" height="31.8" rx="3" fill="#fab219"><title>CAB1 #33 placed (pocket ~33), #180 off (pocket ~198)
+CAB1 - Cabrera CoB
+wafer1 S2_1/C2R5
+Placed, unverified</title></rect>
+<text x="89.2" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">180</text>
+<rect x="103.4" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #32 placed (pocket ~32), #181 off (pocket ~199)
+CAB1 - Cabrera CoB
+wafer1 S2_0/C2R5
+Good</title></rect>
+<text x="114.6" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">181</text>
+<rect x="128.8" y="272.9" width="22.4" height="31.8" rx="3" fill="#fab219"><title>CAB1 #31 placed (pocket ~31), #182 off (pocket ~200)
+CAB1 - Cabrera CoB
+wafer1 S2_-1/C2R5
+Placed, unverified</title></rect>
+<text x="140.1" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">182</text>
+<rect x="154.3" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #30 placed (pocket ~30), #183 off (pocket ~201)
+CAB1 - Cabrera CoB
+wafer1 S2_-2/C2R5
+Good</title></rect>
+<text x="165.5" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">183</text>
+<rect x="179.7" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #29 placed (pocket ~29), #184 off (pocket ~202)
+CAB1 - Cabrera CoB
+wafer1 S2_-3/C2R5
+Good</title></rect>
+<text x="190.9" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">184</text>
+<rect x="205.1" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #28 placed (pocket ~28), #185 off (pocket ~203)
+CAB1 - Cabrera CoB
+wafer1 S1_2/C2R5
+Good</title></rect>
+<text x="216.3" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">185</text>
+<rect x="230.5" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #27 placed (pocket ~27), #186 off (pocket ~204)
+CAB1 - Cabrera CoB
+wafer1 S1_1/C2R5
+Good</title></rect>
+<text x="241.7" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">186</text>
+<rect x="255.9" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #26 placed (pocket ~26), #187 off (pocket ~205)
+CAB1 - Cabrera CoB
+wafer1 S1_0/C2R5
+Good</title></rect>
+<text x="267.2" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">187</text>
+<rect x="281.4" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #25 placed (pocket ~25), #188 off (pocket ~206)
+CAB1 - Cabrera CoB
+wafer1 S1_-1/C2R5
+Good</title></rect>
+<text x="292.6" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">188</text>
+<rect x="306.8" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #24 placed (pocket ~24), #189 off (pocket ~207)
+CAB1 - Cabrera CoB
+wafer1 S1_-2/C2R5
+Good</title></rect>
+<text x="318.0" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">189</text>
+<rect x="332.2" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #23 placed (pocket ~23), #190 off (pocket ~208)
+CAB1 - Cabrera CoB
+wafer1 S1_-3/C2R5
+Good</title></rect>
+<text x="343.4" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">190</text>
+<rect x="357.6" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #22 placed (pocket ~22), #191 off (pocket ~209)
+CAB1 - Cabrera CoB
+wafer1 S1_-4/C2R5
+Good</title></rect>
+<text x="368.8" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">191</text>
+<rect x="383.1" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #21 placed (pocket ~21), #192 off (pocket ~210)
+CAB1 - Cabrera CoB
+wafer1 S0_2/C2R5
+Good</title></rect>
+<text x="394.3" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">192</text>
+<rect x="408.5" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #20 placed (pocket ~20), #193 off (pocket ~211)
+CAB1 - Cabrera CoB
+wafer1 S0_1/C2R5
+Good</title></rect>
+<text x="419.7" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">193</text>
+<rect x="433.9" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #19 placed (pocket ~19), #194 off (pocket ~212)
+CAB1 - Cabrera CoB
+wafer1 S0_0/C2R5
+Good</title></rect>
+<text x="445.1" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">194</text>
+<rect x="459.3" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #18 placed (pocket ~18), #195 off (pocket ~213)
+CAB1 - Cabrera CoB
+wafer1 S0_-1/C2R5
+Good</title></rect>
+<text x="470.5" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">195</text>
+<rect x="484.7" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #17 placed (pocket ~17), #196 off (pocket ~214)
+CAB1 - Cabrera CoB
+wafer1 S0_-2/C2R5
+Good</title></rect>
+<text x="495.9" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">196</text>
+<rect x="510.2" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #16 placed (pocket ~16), #197 off (pocket ~215)
+CAB1 - Cabrera CoB
+wafer1 S0_-3/C2R5
+Good</title></rect>
+<text x="521.4" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">197</text>
+<rect x="535.6" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #15 placed (pocket ~15), #198 off (pocket ~216)
+CAB1 - Cabrera CoB
+wafer1 S0_-4/C2R5
+Good</title></rect>
+<text x="546.8" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">198</text>
+<rect x="561.0" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #14 placed (pocket ~14), #199 off (pocket ~217)
+CAB1 - Cabrera CoB
+wafer1 S-1_2/C2R5
+Good</title></rect>
+<text x="572.2" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">199</text>
+<rect x="586.4" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #13 placed (pocket ~13), #200 off (pocket ~218)
+CAB1 - Cabrera CoB
+wafer1 S-1_1/C2R5
+Good</title></rect>
+<text x="597.6" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">200</text>
+<rect x="611.8" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #12 placed (pocket ~12), #201 off (pocket ~219)
+CAB1 - Cabrera CoB
+wafer1 S-1_0/C2R5
+Good</title></rect>
+<text x="623.1" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">201</text>
+<rect x="637.3" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #11 placed (pocket ~11), #202 off (pocket ~220)
+CAB1 - Cabrera CoB
+wafer1 S-1_-1/C2R5
+Good</title></rect>
+<text x="648.5" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">202</text>
+<rect x="662.7" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #10 placed (pocket ~10), #203 off (pocket ~221)
+CAB1 - Cabrera CoB
+wafer1 S-1_-2/C2R5
+Good</title></rect>
+<text x="673.9" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">203</text>
+<rect x="688.1" y="272.9" width="22.4" height="31.8" rx="3" fill="#fab219"><title>CAB1 #9 placed (pocket ~9), #204 off (pocket ~222)
+CAB1 - Cabrera CoB
+wafer1 S-1_-3/C2R5
+Placed, unverified</title></rect>
+<text x="699.3" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">204</text>
+<rect x="713.5" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #8 placed (pocket ~8), #205 off (pocket ~223)
+CAB1 - Cabrera CoB
+wafer1 S-1_-4/C2R5
+Good</title></rect>
+<text x="724.7" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">205</text>
+<rect x="738.9" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #7 placed (pocket ~7), #206 off (pocket ~224)
+CAB1 - Cabrera CoB
+wafer1 S-2_1/C2R5
+Good</title></rect>
+<text x="750.2" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">206</text>
+<rect x="764.4" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #6 placed (pocket ~6), #207 off (pocket ~225)
+CAB1 - Cabrera CoB
+wafer1 S-2_0/C2R5
+Good</title></rect>
+<text x="775.6" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">207</text>
+<rect x="789.8" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #5 placed (pocket ~5), #208 off (pocket ~226)
+CAB1 - Cabrera CoB
+wafer1 S-2_-1/C2R5
+Good</title></rect>
+<text x="801.0" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">208</text>
+<rect x="815.2" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #4 placed (pocket ~4), #209 off (pocket ~227)
+CAB1 - Cabrera CoB
+wafer1 S-2_-4/C2R5
+Good</title></rect>
+<text x="826.4" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">209</text>
+<rect x="840.6" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #3 placed (pocket ~3), #210 off (pocket ~228)
+CAB1 - Cabrera CoB
+wafer1 S-3_0/C2R5
+Good</title></rect>
+<text x="851.8" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">210</text>
+<rect x="866.1" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #2 placed (pocket ~2), #211 off (pocket ~229)
+CAB1 - Cabrera CoB
+wafer1 S-3_-2/C2R5
+Good</title></rect>
+<text x="877.3" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">211</text>
+<rect x="891.5" y="272.9" width="22.4" height="31.8" rx="3" fill="#0ca30c"><title>CAB1 #1 placed (pocket ~1), #212 off (pocket ~230)
+CAB1 - Cabrera CoB
+wafer1 S-3_-3/C2R5
+Good</title></rect>
+<text x="902.7" y="291.8" font-size="9.2" fill="#0b0b0b" text-anchor="middle" pointer-events="none">212</text>
+<text x="1052.0" y="293.8" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">33 dies</text>
+</svg>
+</div>
+<h2 class="newpage">Every pocket</h2>
+<div class="pockets"><table><thead><tr><th class="n">Pocket</th><th class="n">Die</th><th>Wafer</th><th>Reticle</th><th>Note</th></tr></thead>
+<tbody><tr class="gap"><td class="n">1</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">2</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">3</td><td colspan="4">empty</td></tr><tr class="good"><td class="n">4</td><td class="n">1</td><td>wafer6</td><td>S2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">5</td><td class="n">2</td><td>wafer6</td><td>S2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">6</td><td class="n">3</td><td>wafer6</td><td>S2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">7</td><td class="n">4</td><td>wafer6</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">8</td><td class="n">5</td><td>wafer6</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">9</td><td class="n">6</td><td>wafer6</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">10</td><td class="n">7</td><td>wafer6</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">11</td><td class="n">8</td><td>wafer6</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">12</td><td class="n">9</td><td>wafer6</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">13</td><td class="n">10</td><td>wafer6</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">14</td><td class="n">11</td><td>wafer6</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">15</td><td class="n">12</td><td>wafer6</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">16</td><td class="n">13</td><td>wafer6</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">17</td><td class="n">14</td><td>wafer6</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">18</td><td class="n">15</td><td>wafer6</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">19</td><td class="n">16</td><td>wafer6</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">20</td><td class="n">17</td><td>wafer6</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">21</td><td class="n">18</td><td>wafer6</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">22</td><td class="n">19</td><td>wafer6</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">23</td><td class="n">20</td><td>wafer6</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">24</td><td class="n">21</td><td>wafer6</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">25</td><td class="n">22</td><td>wafer6</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">26</td><td class="n">23</td><td>wafer6</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">27</td><td class="n">24</td><td>wafer6</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">28</td><td class="n">25</td><td>wafer6</td><td>S-1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">29</td><td class="n">26</td><td>wafer6</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">30</td><td class="n">27</td><td>wafer6</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">31</td><td class="n">28</td><td>wafer6</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">32</td><td class="n">29</td><td>wafer6</td><td>S-2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">33</td><td class="n">30</td><td>wafer6</td><td>S-2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">34</td><td class="n">31</td><td>wafer6</td><td>S-2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">35</td><td class="n">32</td><td>wafer6</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">36</td><td class="n">33</td><td>wafer6</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">37</td><td class="n">34</td><td>wafer6</td><td>S-3_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">38</td><td class="n">35</td><td>wafer6</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">39</td><td class="n">36</td><td>wafer6</td><td>S-3_-3/C2R5</td><td></td></tr><tr class="gap"><td class="n">40</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">41</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">42</td><td colspan="4">empty</td></tr><tr class="good"><td class="n">43</td><td class="n">37</td><td>wafer5</td><td>S2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">44</td><td class="n">38</td><td>wafer5</td><td>S2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">45</td><td class="n">39</td><td>wafer5</td><td>S2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">46</td><td class="n">40</td><td>wafer5</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">47</td><td class="n">41</td><td>wafer5</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">48</td><td class="n">42</td><td>wafer5</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">49</td><td class="n">43</td><td>wafer5</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">50</td><td class="n">44</td><td>wafer5</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">51</td><td class="n">45</td><td>wafer5</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">52</td><td class="n">46</td><td>wafer5</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">53</td><td class="n">47</td><td>wafer5</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">54</td><td class="n">48</td><td>wafer5</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">55</td><td class="n">49</td><td>wafer5</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">56</td><td class="n">50</td><td>wafer5</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">57</td><td class="n">51</td><td>wafer5</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">58</td><td class="n">52</td><td>wafer5</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">59</td><td class="n">53</td><td>wafer5</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">60</td><td class="n">54</td><td>wafer5</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">61</td><td class="n">55</td><td>wafer5</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">62</td><td class="n">56</td><td>wafer5</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">63</td><td class="n">57</td><td>wafer5</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">64</td><td class="n">58</td><td>wafer5</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">65</td><td class="n">59</td><td>wafer5</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">66</td><td class="n">60</td><td>wafer5</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">67</td><td class="n">61</td><td>wafer5</td><td>S-1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">68</td><td class="n">62</td><td>wafer5</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">69</td><td class="n">63</td><td>wafer5</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">70</td><td class="n">64</td><td>wafer5</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">71</td><td class="n">65</td><td>wafer5</td><td>S-2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">72</td><td class="n">66</td><td>wafer5</td><td>S-2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">73</td><td class="n">67</td><td>wafer5</td><td>S-2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">74</td><td class="n">68</td><td>wafer5</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">75</td><td class="n">69</td><td>wafer5</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">76</td><td class="n">70</td><td>wafer5</td><td>S-3_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">77</td><td class="n">71</td><td>wafer5</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">78</td><td class="n">72</td><td>wafer5</td><td>S-3_-3/C2R5</td><td></td></tr><tr class="gap"><td class="n">79</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">80</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">81</td><td colspan="4">empty</td></tr><tr class="good"><td class="n">82</td><td class="n">73</td><td>wafer4</td><td>S2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">83</td><td class="n">74</td><td>wafer4</td><td>S2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">84</td><td class="n">75</td><td>wafer4</td><td>S2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">85</td><td class="n">76</td><td>wafer4</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">86</td><td class="n">77</td><td>wafer4</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">87</td><td class="n">78</td><td>wafer4</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">88</td><td class="n">79</td><td>wafer4</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">89</td><td class="n">80</td><td>wafer4</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">90</td><td class="n">81</td><td>wafer4</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">91</td><td class="n">82</td><td>wafer4</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">92</td><td class="n">83</td><td>wafer4</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">93</td><td class="n">84</td><td>wafer4</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">94</td><td class="n">85</td><td>wafer4</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">95</td><td class="n">86</td><td>wafer4</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">96</td><td class="n">87</td><td>wafer4</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">97</td><td class="n">88</td><td>wafer4</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">98</td><td class="n">89</td><td>wafer4</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">99</td><td class="n">90</td><td>wafer4</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">100</td><td class="n">91</td><td>wafer4</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">101</td><td class="n">92</td><td>wafer4</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">102</td><td class="n">93</td><td>wafer4</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">103</td><td class="n">94</td><td>wafer4</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">104</td><td class="n">95</td><td>wafer4</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">105</td><td class="n">96</td><td>wafer4</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">106</td><td class="n">97</td><td>wafer4</td><td>S-1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">107</td><td class="n">98</td><td>wafer4</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">108</td><td class="n">99</td><td>wafer4</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">109</td><td class="n">100</td><td>wafer4</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">110</td><td class="n">101</td><td>wafer4</td><td>S-2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">111</td><td class="n">102</td><td>wafer4</td><td>S-2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">112</td><td class="n">103</td><td>wafer4</td><td>S-2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">113</td><td class="n">104</td><td>wafer4</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">114</td><td class="n">105</td><td>wafer4</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">115</td><td class="n">106</td><td>wafer4</td><td>S-3_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">116</td><td class="n">107</td><td>wafer4</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">117</td><td class="n">108</td><td>wafer4</td><td>S-3_-3/C2R5</td><td></td></tr><tr class="gap"><td class="n">118</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">119</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">120</td><td colspan="4">empty</td></tr><tr class="good"><td class="n">121</td><td class="n">109</td><td>wafer3</td><td>S2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">122</td><td class="n">110</td><td>wafer3</td><td>S2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">123</td><td class="n">111</td><td>wafer3</td><td>S2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">124</td><td class="n">112</td><td>wafer3</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">125</td><td class="n">113</td><td>wafer3</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">126</td><td class="n">114</td><td>wafer3</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">127</td><td class="n">115</td><td>wafer3</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">128</td><td class="n">116</td><td>wafer3</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">129</td><td class="n">117</td><td>wafer3</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">130</td><td class="n">118</td><td>wafer3</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">131</td><td class="n">119</td><td>wafer3</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">132</td><td class="n">120</td><td>wafer3</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">133</td><td class="n">121</td><td>wafer3</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">134</td><td class="n">122</td><td>wafer3</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">135</td><td class="n">123</td><td>wafer3</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">136</td><td class="n">124</td><td>wafer3</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">137</td><td class="n">125</td><td>wafer3</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">138</td><td class="n">126</td><td>wafer3</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">139</td><td class="n">127</td><td>wafer3</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">140</td><td class="n">128</td><td>wafer3</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">141</td><td class="n">129</td><td>wafer3</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">142</td><td class="n">130</td><td>wafer3</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">143</td><td class="n">131</td><td>wafer3</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">144</td><td class="n">132</td><td>wafer3</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">145</td><td class="n">133</td><td>wafer3</td><td>S-1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">146</td><td class="n">134</td><td>wafer3</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">147</td><td class="n">135</td><td>wafer3</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">148</td><td class="n">136</td><td>wafer3</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">149</td><td class="n">137</td><td>wafer3</td><td>S-2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">150</td><td class="n">138</td><td>wafer3</td><td>S-2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">151</td><td class="n">139</td><td>wafer3</td><td>S-2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">152</td><td class="n">140</td><td>wafer3</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">153</td><td class="n">141</td><td>wafer3</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">154</td><td class="n">142</td><td>wafer3</td><td>S-3_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">155</td><td class="n">143</td><td>wafer3</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">156</td><td class="n">144</td><td>wafer3</td><td>S-3_-3/C2R5</td><td></td></tr><tr class="gap"><td class="n">157</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">158</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">159</td><td colspan="4">empty</td></tr><tr class="good"><td class="n">160</td><td class="n">145</td><td>wafer2</td><td>S2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">161</td><td class="n">146</td><td>wafer2</td><td>S2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">162</td><td class="n">147</td><td>wafer2</td><td>S2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">163</td><td class="n">148</td><td>wafer2</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">164</td><td class="n">149</td><td>wafer2</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">165</td><td class="n">150</td><td>wafer2</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">166</td><td class="n">151</td><td>wafer2</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">167</td><td class="n">152</td><td>wafer2</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">168</td><td class="n">153</td><td>wafer2</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">169</td><td class="n">154</td><td>wafer2</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">170</td><td class="n">155</td><td>wafer2</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">171</td><td class="n">156</td><td>wafer2</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">172</td><td class="n">157</td><td>wafer2</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">173</td><td class="n">158</td><td>wafer2</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">174</td><td class="n">159</td><td>wafer2</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">175</td><td class="n">160</td><td>wafer2</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">176</td><td class="n">161</td><td>wafer2</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">177</td><td class="n">162</td><td>wafer2</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">178</td><td class="n">163</td><td>wafer2</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">179</td><td class="n">164</td><td>wafer2</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">180</td><td class="n">165</td><td>wafer2</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">181</td><td class="n">166</td><td>wafer2</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">182</td><td class="n">167</td><td>wafer2</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">183</td><td class="n">168</td><td>wafer2</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">184</td><td class="n">169</td><td>wafer2</td><td>S-1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">185</td><td class="n">170</td><td>wafer2</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">186</td><td class="n">171</td><td>wafer2</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">187</td><td class="n">172</td><td>wafer2</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">188</td><td class="n">173</td><td>wafer2</td><td>S-2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">189</td><td class="n">174</td><td>wafer2</td><td>S-2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">190</td><td class="n">175</td><td>wafer2</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">191</td><td class="n">176</td><td>wafer2</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">192</td><td class="n">177</td><td>wafer2</td><td>S-3_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">193</td><td class="n">178</td><td>wafer2</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">194</td><td class="n">179</td><td>wafer2</td><td>S-3_-3/C2R5</td><td></td></tr><tr class="gap"><td class="n">195</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">196</td><td colspan="4">empty</td></tr><tr class="gap"><td class="n">197</td><td colspan="4">empty</td></tr><tr class="placed_unverified"><td class="n">198</td><td class="n">180</td><td>wafer1</td><td>S2_1/C2R5</td><td>? Unverified </td></tr><tr class="good"><td class="n">199</td><td class="n">181</td><td>wafer1</td><td>S2_0/C2R5</td><td></td></tr><tr class="placed_unverified"><td class="n">200</td><td class="n">182</td><td>wafer1</td><td>S2_-1/C2R5</td><td>? Unverified </td></tr><tr class="good"><td class="n">201</td><td class="n">183</td><td>wafer1</td><td>S2_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">202</td><td class="n">184</td><td>wafer1</td><td>S2_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">203</td><td class="n">185</td><td>wafer1</td><td>S1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">204</td><td class="n">186</td><td>wafer1</td><td>S1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">205</td><td class="n">187</td><td>wafer1</td><td>S1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">206</td><td class="n">188</td><td>wafer1</td><td>S1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">207</td><td class="n">189</td><td>wafer1</td><td>S1_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">208</td><td class="n">190</td><td>wafer1</td><td>S1_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">209</td><td class="n">191</td><td>wafer1</td><td>S1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">210</td><td class="n">192</td><td>wafer1</td><td>S0_2/C2R5</td><td></td></tr><tr class="good"><td class="n">211</td><td class="n">193</td><td>wafer1</td><td>S0_1/C2R5</td><td></td></tr><tr class="good"><td class="n">212</td><td class="n">194</td><td>wafer1</td><td>S0_0/C2R5</td><td></td></tr><tr class="good"><td class="n">213</td><td class="n">195</td><td>wafer1</td><td>S0_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">214</td><td class="n">196</td><td>wafer1</td><td>S0_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">215</td><td class="n">197</td><td>wafer1</td><td>S0_-3/C2R5</td><td></td></tr><tr class="good"><td class="n">216</td><td class="n">198</td><td>wafer1</td><td>S0_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">217</td><td class="n">199</td><td>wafer1</td><td>S-1_2/C2R5</td><td></td></tr><tr class="good"><td class="n">218</td><td class="n">200</td><td>wafer1</td><td>S-1_1/C2R5</td><td></td></tr><tr class="good"><td class="n">219</td><td class="n">201</td><td>wafer1</td><td>S-1_0/C2R5</td><td></td></tr><tr class="good"><td class="n">220</td><td class="n">202</td><td>wafer1</td><td>S-1_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">221</td><td class="n">203</td><td>wafer1</td><td>S-1_-2/C2R5</td><td></td></tr><tr class="placed_unverified"><td class="n">222</td><td class="n">204</td><td>wafer1</td><td>S-1_-3/C2R5</td><td>? Unverified </td></tr><tr class="good"><td class="n">223</td><td class="n">205</td><td>wafer1</td><td>S-1_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">224</td><td class="n">206</td><td>wafer1</td><td>S-2_1/C2R5</td><td></td></tr><tr class="good"><td class="n">225</td><td class="n">207</td><td>wafer1</td><td>S-2_0/C2R5</td><td></td></tr><tr class="good"><td class="n">226</td><td class="n">208</td><td>wafer1</td><td>S-2_-1/C2R5</td><td></td></tr><tr class="good"><td class="n">227</td><td class="n">209</td><td>wafer1</td><td>S-2_-4/C2R5</td><td></td></tr><tr class="good"><td class="n">228</td><td class="n">210</td><td>wafer1</td><td>S-3_0/C2R5</td><td></td></tr><tr class="good"><td class="n">229</td><td class="n">211</td><td>wafer1</td><td>S-3_-2/C2R5</td><td></td></tr><tr class="good"><td class="n">230</td><td class="n">212</td><td>wafer1</td><td>S-3_-3/C2R5</td><td></td></tr></tbody></table></div>
+<footer>Die and pocket numbers are counted from the last run2 die on each reel, the first to come off. The machine logged the empty pockets left between wafers only from 2026-10-23; on reels filled before that, die numbers are certain but pocket numbers may be short of the real reel. Pocket numbers are estimates; die numbers are exact.</footer>
+</main></body></html>

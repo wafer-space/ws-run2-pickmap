@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="276" viewBox="0 0 760 276" font-family="system-ui, -apple-system, Segoe UI, sans-serif" role="img" aria-label="Why dies were lost">
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<text x="0.0" y="16.0" font-size="14" fill="#0b0b0b" text-anchor="start" font-weight="600">Why dies were lost</text>
+<text x="272.0" y="45.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Not on the nozzle at the up camera</text>
+<path d="M280.0 33.0 h416.0 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-416.0 z" fill="#898781"><title>Not on the nozzle at the up camera: 92</title></path>
+<text x="706.0" y="45.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">92</text>
+<text x="272.0" y="69.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Landed on the pocket wall</text>
+<path d="M280.0 57.0 h155.8 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-155.8 z" fill="#898781"><title>Landed on the pocket wall: 35</title></path>
+<text x="445.8" y="69.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">35</text>
+<text x="272.0" y="93.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Reticle gone from the wafer before picking</text>
+<path d="M280.0 81.0 h119.3 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-119.3 z" fill="#898781"><title>Reticle gone from the wafer before picking: 27</title></path>
+<text x="409.3" y="93.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">27</text>
+<text x="272.0" y="117.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Pocket empty after the place</text>
+<path d="M280.0 105.0 h105.6 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-105.6 z" fill="#898781"><title>Pocket empty after the place: 24</title></path>
+<text x="395.6" y="117.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">24</text>
+<text x="272.0" y="141.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Picked, never placed</text>
+<path d="M280.0 129.0 h37.1 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-37.1 z" fill="#898781"><title>Picked, never placed: 9</title></path>
+<text x="327.1" y="141.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">9</text>
+<text x="272.0" y="165.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Tilted or face down in the pocket</text>
+<path d="M280.0 153.0 h18.8 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-18.8 z" fill="#898781"><title>Tilted or face down in the pocket: 5</title></path>
+<text x="308.8" y="165.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">5</text>
+<text x="272.0" y="189.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Other</text>
+<path d="M280.0 177.0 h9.7 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-9.7 z" fill="#898781"><title>Other: 3</title></path>
+<text x="299.7" y="189.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">3</text>
+<text x="272.0" y="213.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Off its seat in the pocket</text>
+<path d="M280.0 201.0 h9.7 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-9.7 z" fill="#898781"><title>Off its seat in the pocket: 3</title></path>
+<text x="299.7" y="213.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">3</text>
+<text x="272.0" y="237.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Could not be squared up on the nozzle</text>
+<path d="M280.0 225.0 h9.7 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-9.7 z" fill="#898781"><title>Could not be squared up on the nozzle: 3</title></path>
+<text x="299.7" y="237.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">3</text>
+<text x="272.0" y="261.0" font-size="12" fill="#52514e" text-anchor="end" font-weight="normal">Turned in the pocket</text>
+<path d="M280.0 249.0 h5.1 a4 4 0 0 1 4 4 v8.0 a4 4 0 0 1 -4 4 h-5.1 z" fill="#898781"><title>Turned in the pocket: 2</title></path>
+<text x="295.1" y="261.0" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">2</text>
+</svg>
